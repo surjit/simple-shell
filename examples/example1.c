@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   main.c
  * Author: root
  *
@@ -17,17 +17,17 @@
 #define MAX_LENGTH 1024
 
 int main(int argc, char *argv[]) {
-  char line[MAX_LENGTH];
-  
-  while (1) {
-    printf("$ ");
-    if (!fgets(line, MAX_LENGTH, stdin)) break;
-    
-    printf("%s", line);
-    
-    system(line);
-  }
+	char line[MAX_LENGTH];
 
-  return 0;
+	while (1) {
+		printf("$ ");
+		if (!fgets(line, MAX_LENGTH, stdin)) break;
+
+		printf("%s", line);
+
+		system(line);
+	}
+
+	return 0;
 }
 

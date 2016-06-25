@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   example2.c
  * Author: root
  *
@@ -28,33 +28,33 @@
 #define DELIMS " \t\r\n"
 
 int main(int argc, char *argv[]) {
-  char *cmd;
-  char line[MAX_LENGTH];
+	char *cmd;
+	char line[MAX_LENGTH];
 
-  while (1) {
-    printf("$ ");
-    if (!fgets(line, MAX_LENGTH, stdin)) break;
+	while (1) {
+		printf("$ ");
+		if (!fgets(line, MAX_LENGTH, stdin)) break;
 
-    // Parse and execute command
-    if ((cmd = strtok(line, DELIMS))) {
-      // Clear errors
-      errno = 0;
+		// Parse and execute command
+		if ((cmd = strtok(line, DELIMS))) {
+			// Clear errors
+			errno = 0;
 
-      if (strcmp(cmd, "cd") == 0) {
-        char *arg = strtok(0, DELIMS);
+			if (strcmp(cmd, "cd") == 0) {
+				char *arg = strtok(0, DELIMS);
 
-        if (!arg) fprintf(stderr, "cd missing argument.\n");
-        else chdir(arg);
+				if (!arg) fprintf(stderr, "cd missing argument.\n");
+				else chdir(arg);
 
-      } else if (strcmp(cmd, "exit") == 0) {
-        break;
+			} else if (strcmp(cmd, "exit") == 0) {
+				break;
 
-      } else system(line);
+			} else system(line);
 
-      if (errno) perror("Command failed");
-    }
-  }
+			if (errno) perror("Command failed");
+		}
+	}
 
-  return 0;
+	return 0;
 }
 
