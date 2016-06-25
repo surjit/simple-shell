@@ -47,9 +47,9 @@ void redi_and_pipi_cmd(char* cmd);
 /*******************************Variable And Struct Declarations******************************/
 
 struct proc_fields {
-        int pid, pgid;
-        char* name;
-        int active;
+	int pid, pgid;
+	char* name;
+	int active;
 };
 
 typedef struct proc_fields proc_fields;

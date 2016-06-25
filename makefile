@@ -7,3 +7,7 @@ OBJ = built_ins.o basic_setup.o shell.o run_command.o pinfo.o parse.o io_redirec
 
 shell: $(OBJ)
 		gcc -o $@ $^ $(CFLAGS)
+
+clean:
+	rm *.o
+	
